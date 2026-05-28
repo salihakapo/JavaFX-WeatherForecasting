@@ -1,13 +1,13 @@
 # JavaFX-WeatherForecasting
 ## Multi-User JavaFX Weather Forecasting & Identity Persistence Application
 
-This cross-platform desktop application connects a secure JavaFX user interface with real-time remote RESTful JSON enterprise meteorological streams via OpenWeatherMap API[cite: 1].
+This cross-platform desktop application connects a secure JavaFX user interface with real-time remote RESTful JSON enterprise meteorological streams via OpenWeatherMap API.
 
 ### 🛠️ Core Technical Features Include:
-* **Decoupled Identity Subsystem:** Standalone controller views handling registration and secure login loops[cite: 1].
-* **Advanced Cryptography:** PBKDF2WithHmacSHA256 password salting models (120,000 computation loops) and secure binary object serialization (`users.dat`)[cite: 1].
-* **Session Isolation Ledger:** Character streaming tracking (`history.txt`) mapped strictly to personal authenticated dashboard views[cite: 1].
-* **Dynamic Weather Grid:** Horizontally-aligned 5-day predictive forecasting carousel derived from nested JSON arrays[cite: 1].
+* **Decoupled Identity Subsystem:** Standalone controller views handling registration and secure login loops.
+* **Advanced Cryptography:** PBKDF2WithHmacSHA256 password salting models (120,000 computation loops) and secure binary object serialization (`users.dat`).
+* **Session Isolation Ledger:** Character streaming tracking (`history.txt`) mapped strictly to personal authenticated dashboard views.
+* **Dynamic Weather Grid:** Horizontally-aligned 5-day predictive forecasting carousel derived from nested JSON arrays.
   
 
 ## Installation & Execution Procedure
