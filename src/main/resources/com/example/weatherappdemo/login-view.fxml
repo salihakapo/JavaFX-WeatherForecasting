@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.example.weatherappdemo.LoginController"
+           styleClass="root-pane"
+           alignment="CENTER">
+
+    <VBox styleClass="auth-card" alignment="CENTER" spacing="12" maxWidth="420">
+        <ImageView fitHeight="88" fitWidth="88" preserveRatio="true" pickOnBounds="true">
+            <image>
+                <Image url="@logo.png"/>
+            </image>
+        </ImageView>
+
+        <Label text="SkyCast" styleClass="app-title"/>
+        <Label text="Sign in to check the weather" styleClass="app-subtitle"/>
+
+        <VBox spacing="6" alignment="CENTER_LEFT" maxWidth="340">
+            <Label text="Username" styleClass="field-label"/>
+            <TextField fx:id="usernameField" promptText="Enter username"
+                       styleClass="field" onAction="#handleLogin" maxWidth="Infinity"/>
+        </VBox>
+
+        <VBox spacing="6" alignment="CENTER_LEFT" maxWidth="340">
+            <Label text="Password" styleClass="field-label"/>
+            <PasswordField fx:id="passwordField" promptText="Enter password"
+                            styleClass="field" onAction="#handleLogin" maxWidth="Infinity"/>
+        </VBox>
+
+        <Label fx:id="statusLabel" styleClass="status-label" text=""/>
+
+        <Button fx:id="loginButton" text="Sign In" onAction="#handleLogin"
+                styleClass="btn-primary" maxWidth="Infinity"/>
+
+        <HBox alignment="CENTER" spacing="6">
+            <Label text="New here?" styleClass="app-subtitle"/>
+            <Button text="Create an account" onAction="#goToSignUp" styleClass="link-button"/>
+        </HBox>
+    </VBox>
+</StackPane>

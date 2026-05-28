@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.example.weatherappdemo.SignUpController"
+           styleClass="root-pane"
+           alignment="CENTER">
+
+    <VBox styleClass="auth-card" alignment="CENTER" spacing="10" maxWidth="420">
+        <ImageView fitHeight="80" fitWidth="80" preserveRatio="true" pickOnBounds="true">
+            <image>
+                <Image url="@logo.png"/>
+            </image>
+        </ImageView>
+
+        <Label text="Create Account" styleClass="app-title"/>
+        <Label text="Join SkyCast to save your searches" styleClass="app-subtitle"/>
+
+        <VBox spacing="6" alignment="CENTER_LEFT" maxWidth="340">
+            <Label text="Username" styleClass="field-label"/>
+            <TextField fx:id="usernameField" promptText="Choose a username"
+                       styleClass="field" maxWidth="Infinity"/>
+        </VBox>
+
+        <VBox spacing="6" alignment="CENTER_LEFT" maxWidth="340">
+            <Label text="Password" styleClass="field-label"/>
+            <PasswordField fx:id="passwordField" promptText="At least 4 characters"
+                           styleClass="field" maxWidth="Infinity"/>
+        </VBox>
+
+        <VBox spacing="6" alignment="CENTER_LEFT" maxWidth="340">
+            <Label text="Confirm password" styleClass="field-label"/>
+            <PasswordField fx:id="confirmPasswordField" promptText="Repeat password"
+                           styleClass="field" onAction="#handleSignUp" maxWidth="Infinity"/>
+        </VBox>
+
+        <Label fx:id="statusLabel" styleClass="status-label" text=""/>
+
+        <Button fx:id="signUpButton" text="Create Account" onAction="#handleSignUp"
+                styleClass="btn-primary" maxWidth="Infinity"/>
+
+        <HBox alignment="CENTER" spacing="6">
+            <Label text="Already registered?" styleClass="app-subtitle"/>
+            <Button text="Sign in" onAction="#goToLogin" styleClass="link-button"/>
+        </HBox>
+    </VBox>
+</StackPane>

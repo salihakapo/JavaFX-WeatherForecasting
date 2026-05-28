@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="mainContainer" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.weatherappdemo.WeatherController"
+      styleClass="weather-root" spacing="0" alignment="TOP_CENTER">
+
+    <padding>
+        <Insets top="20" right="28" bottom="24" left="28"/>
+    </padding>
+
+    <HBox styleClass="weather-header" alignment="CENTER_LEFT" spacing="16">
+        <HBox alignment="CENTER_LEFT" spacing="12" HBox.hgrow="ALWAYS">
+            <ImageView fitHeight="48" fitWidth="48" preserveRatio="true">
+                <image>
+                    <Image url="@logo.png"/>
+                </image>
+            </ImageView>
+            <VBox spacing="2">
+                <Label text="SkyCast" styleClass="weather-title"/>
+                <Label fx:id="welcomeLabel" text="Weather Forecast" style="-fx-text-fill: rgba(255,255,255,0.85); -fx-font-size: 13px;"/>
+            </VBox>
+        </HBox>
+        <Button text="History" onAction="#handleViewHistory" styleClass="btn-toolbar, btn-history"/>
+        <Button fx:id="logoutButton" text="Logout" onAction="#handleLogout" styleClass="btn-toolbar, btn-logout"/>
+    </HBox>
+
+    <VBox styleClass="weather-card" alignment="CENTER" spacing="14" maxWidth="560">
+        <HBox spacing="10" alignment="CENTER">
+            <TextField fx:id="cityInput" promptText="Enter city name…"
+                       styleClass="search-field" onAction="#getWeatherData"/>
+            <Button text="Search" onAction="#getWeatherData" styleClass="btn-primary"/>
+        </HBox>
+
+        <ImageView fx:id="weatherIcon" fitHeight="110" fitWidth="110" preserveRatio="true"/>
+
+        <Label fx:id="temperatureLabel" text="Temperature: —" styleClass="weather-stat"/>
+        <Label fx:id="humidityLabel" text="Humidity: —" styleClass="weather-stat"/>
+        <Label fx:id="descriptionLabel" text="Search for a city above" styleClass="weather-stat"/>
+    </VBox>
+
+    <Label text="5-Day Forecast" style="-fx-text-fill: white; -fx-font-size: 17px; -fx-font-weight: bold; -fx-padding: 20 0 8 0;"/>
+
+    <ScrollPane fitToWidth="true" prefHeight="160" styleClass="forecast-scroll" maxWidth="860">
+        <HBox fx:id="forecastContainer" alignment="CENTER" spacing="12" style="-fx-padding: 4 8 12 8;"/>
+    </ScrollPane>
+</VBox>

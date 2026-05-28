@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.weatherappdemo.HistoryController"
+      styleClass="history-root" alignment="TOP_CENTER" spacing="0">
+
+    <padding>
+        <Insets top="24" right="28" bottom="24" left="28"/>
+    </padding>
+
+    <HBox alignment="CENTER_LEFT" spacing="12" style="-fx-padding: 0 0 20 0;">
+        <ImageView fitHeight="44" fitWidth="44" preserveRatio="true">
+            <image>
+                <Image url="@logo.png"/>
+            </image>
+        </ImageView>
+        <Label text="SkyCast" style="-fx-text-fill: white; -fx-font-size: 22px; -fx-font-weight: bold;"/>
+    </HBox>
+
+    <VBox styleClass="history-card" alignment="CENTER" spacing="16" maxWidth="560">
+        <Label fx:id="historyTitleLabel" text="Your Search History" styleClass="history-title"/>
+
+        <ListView fx:id="historyListView" prefHeight="320" prefWidth="480" styleClass="history-list"/>
+
+        <HBox spacing="14" alignment="CENTER">
+            <Button fx:id="backButton" text="Back to Weather" onAction="#handleBack" styleClass="btn-secondary"/>
+            <Button fx:id="clearButton" text="Clear My History" onAction="#handleClearHistory"
+                    style="-fx-background-color: #ef4444; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10; -fx-padding: 10 20; -fx-cursor: hand;"/>
+        </HBox>
+    </VBox>
+</VBox>
